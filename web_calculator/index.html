@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Calculator</title>
+    <title>電子計算機</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
-        <input type="text" class="calculator-screen" value="" disabled />
+        <div class="calculator-display">
+            <div class="expression" id="expression"></div>
+            <div class="result" id="result">0</div>
+        </div>
         <div class="calculator-keys">
-            <button type="button" class="operator" value="+">+</button>
-            <button type="button" class="operator" value="-">-</button>
-            <button type="button" class="operator" value="*">&times;</button>
-            <button type="button" class="operator" value="/">&divide;</button>
+            <!-- Row 1: AC, +/-, %, ÷ -->
+            <button type="button" class="btn btn-gray" data-action="clear">AC</button>
+            <button type="button" class="btn btn-gray" data-action="sign">+/-</button>
+            <button type="button" class="btn btn-gray" data-action="percent">%</button>
+            <button type="button" class="btn btn-orange" data-action="operator" data-value="/">÷</button>
 
-            <button type="button" value="7">7</button>
-            <button type="button" value="8">8</button>
-            <button type="button" value="9">9</button>
+            <!-- Row 2: 7, 8, 9, × -->
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="7">7</button>
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="8">8</button>
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="9">9</button>
+            <button type="button" class="btn btn-orange" data-action="operator" data-value="*">×</button>
 
+            <!-- Row 3: 4, 5, 6, - -->
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="4">4</button>
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="5">5</button>
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="6">6</button>
+            <button type="button" class="btn btn-orange" data-action="operator" data-value="-">−</button>
 
-            <button type="button" value="4">4</button>
-            <button type="button" value="5">5</button>
-            <button type="button" value="6">6</button>
+            <!-- Row 4: 1, 2, 3, + -->
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="1">1</button>
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="2">2</button>
+            <button type="button" class="btn btn-dark" data-action="digit" data-value="3">3</button>
+            <button type="button" class="btn btn-orange" data-action="operator" data-value="+">+</button>
 
-
-            <button type="button" value="1">1</button>
-            <button type="button" value="2">2</button>
-            <button type="button" value="3">3</button>
-
-
-            <button type="button" value="0">0</button>
-            <button type="button" class="decimal" value=".">.</button>
-            <button type="button" class="all-clear" value="all-clear">AC</button>
-            <button type="button" class="equal-sign operator" value="=">=</button>
+            <!-- Row 5: 0 (wide), ., = -->
+            <button type="button" class="btn btn-dark btn-wide" data-action="digit" data-value="0">0</button>
+            <button type="button" class="btn btn-dark" data-action="decimal">.</button>
+            <button type="button" class="btn btn-orange" data-action="equals">=</button>
         </div>
     </div>
     <script src="script.js"></script>
